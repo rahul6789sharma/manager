@@ -1,4 +1,4 @@
-# FootBall Teams Manager 
+# FootBall Teams Manager
 
 ## Technologies
 
@@ -6,51 +6,66 @@
 2. Spring Framework Boot v3.x.x
 5. Spring Data Jpa
 6. H2 dataBase
+7. Maven
 
-## Local
+<!-- ABOUT THE PROJECT -->
 
-- [Service DUS page](https://confluence.hilti.com/pages/viewpage.action?pageId=209251159)
-- [Technical documentation](https://confluence.hilti.com/display/pshilti/Smart+search+decision+on+components+and+implementation)
+## About The Project
+
+There are 2 REST points to perform following operations related to FootBall Teams Manager  :
+
+1. POST Endpoint /teams to create teams with players or without player.
+2. GET Endpoint to retrieve teams. This end point support pagination and sortBy option
+
+## Project repository
+
+- [Project page](https://github.com/rahul6789sharma/manager)
 
 ### Build and run
 
-_Do not forget to start docker containers before launching the app._
-
-Run `./gradlew bootRun` - this will run the app with 'local' profile applied.
-
-Run `./gradlew bootRun --args='--spring.profiles.active={profile}'` to build and run application with specific profile.
-
-Run tests locally (starts temporarily docker containers, executes tests, etc.)
-`ACTIVE_PROFILE=test ./gradlew test --info`
-
-Profiles are:
-
-` local, dev, qas, preprod `
-
-and for **testing** we use:
-
-` test, gitlab ` (gitlab is used to run test on Gitlab CI).
-
-For local development we can use profile 'local'
-
-### Docker setup
-
-1. Make sure you have installed docker desktop, and it's working correctly.
-2. Make sure you have access to package registry (https://git.hilti.com/hdms/hilti-online/hdms-smart-search/-/packages)
-3. Make sure you have access to container registry (https://git.hilti.com/hdms/hilti-online/hdms-smart-search/container_registry)
 
 
-####Default usage
-1. Create access token to login to gitlab (go to https://git.hilti.com/-/profile/personal_access_tokens or https://git.hilti.com/hdms/ -> edit profile -> Access Token -> add token with read_api/read_registry/write_registry scopes)
-2. Login to gitlab docker (ex: `docker login registry-git.hilti.com -u userfirstname.userlastname -p generated_token_xyz`)
-3. Then `cd /hdms-smart-search/docker/default` and `docker-compose up` - this will pull the images from gitlab docker registry and a good way to check if container can be started
+<!-- GETTING STARTED -->
+## Getting Started
+Clone the repository
 
-Container should be created/started
+git clone git@github.com:rahul6789sharma/manager.git
 
-## CICD
 
-Pipelines:
-https://git.hilti.com/hdms/hilti-online/hdms-smart-search/-/pipelines
+**Setting up the workspace**
+
+After cloning the Repository it can be placed anywhere on your local hard drive.
+
+### Prerequisites & Installation for SpringBoot
+
+### Requirements
+
+For building and running the application you need:
+
+- [JDK 1.17](https://www.oracle.com/java/technologies/downloads/#java17)
+- [Maven 3](https://maven.apache.org)
+- [H2](http://www.h2database.com/html/tutorial.html)
+
+## Building the application locally
+
+```
+cd <path_of_backend_repo>
+mvn clean install
+Ex: <MainPath>/test/
+```
+
+## Deploying the application
+1. Locally
+```
+java -jar manger-0.0.1-SNAPSHOT.jar
+```
+After starting applcation
+
+you can use postman collection to test the applcation
+ ```
+tools/FootTeam Manager.postman_collection.json
+```
 
 ## Code Formatter
+
 https://confluence.hilti.com/pages/viewpage.action?spaceKey=pshilti&title=How+to+setup+code-formatter
