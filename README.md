@@ -66,6 +66,36 @@ you can use postman collection to test the applcation
 tools/FootTeam Manager.postman_collection.json
 ```
 
+Rest URL's
+Here are some url samples for pagination (with/without filter):
+
+GET /team: using default page and size
+
+http://localhost:8080/teams
+
+GET /team: with pagination and shorting option
+
+http://localhost:8080/teams?offset=0&pageSize=1&sortBy=name&dir=DESC
+
+Post: /team: to create teams
+
+Post : http://localhost:8080/teams
+ ```
+
+{
+"name": "a",
+"acronym":"acronym",
+"players": [
+{
+"name": "p1"
+},
+{
+"name": "p2"
+}
+]
+}
+ ```
+
 ## Code Formatter
 
 https://confluence.hilti.com/pages/viewpage.action?spaceKey=pshilti&title=How+to+setup+code-formatter
